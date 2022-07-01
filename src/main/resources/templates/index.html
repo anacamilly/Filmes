@@ -1,0 +1,40 @@
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <title>Filmes</title>
+
+    <style>
+        body{
+            background: url('/img/filmes.jpg') no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        nav{
+            background-color: #af0c19;
+        }
+
+        .filmes{
+            background-color: rgba(0,0,0,0.5);
+        }
+
+        footer{
+            background-color: #af0c19;
+        }
+    </style>
+</head>
+<body>
+    <div class="filmes">
+        <header th:replace="fragments/navbar :: header"></header>
+
+        <section th:replace="fragments/filmes/cardFilmes :: filmes"></section>
+
+        <footer th:replace="fragments/footer :: footer"></footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
