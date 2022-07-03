@@ -13,15 +13,11 @@
             background-attachment: fixed;
         }
 
-        nav{
-            background-color: #af0c19;
-        }
-
         .filmes{
             background-color: rgba(0,0,0,0.5);
         }
 
-        footer{
+        nav, footer{
             background-color: #af0c19;
         }
     </style>
@@ -30,7 +26,7 @@
     <div class="filmes">
         <header th:replace="fragments/navbar :: header"></header>
 
-        <section th:replace="fragments/filmes/cardFilmes :: filmes"></section>
+        <section th:replace="fragments/filmes/cardFilmes :: filmes(${filmes})"></section>
 
         <footer th:replace="fragments/footer :: footer"></footer>
     </div>
