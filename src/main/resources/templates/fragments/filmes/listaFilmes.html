@@ -1,0 +1,29 @@
+<main th:fragment="movie(filmes)" style=" width: 100%">
+  <h1 style="color: white; font-size: 30px; font-family: fantasy; padding: 20px; text-align: center;">Todos os filmes</h1>
+  <div class="col-md-9 ms-sm-auto col-lg-10 px-md-4" style="margin-right: 5%;">
+  <div class="row row-cols-1 row-cols-md-3 g-4" >
+    <div th:each="f : ${filmes}" th:object="${f}">
+    <div class="col">
+    <div class="card" style="width: 18rem; margin: 2%;">
+      <img th:src="@{'/images/' + *{imagemUri}}" alt="imagem"/>
+      <div class="card-body">
+        ID:<h6 class="card-title" th:text="*{id}"></h6>
+        Título:<h5 class="card-title" th:text="*{titulo}"></h5>
+        Sinopse:<p class="card-text" th:text="*{sinopse}"></p>
+        Diretor:<p class="card-text" th:text="*{diretor}"></p>
+        Avaliação:<p class="card-text" th:text="*{avaliacao}"></p>
+        Preço: <p class="card-text" th:text="*{preco}"></p>
+        Lançamento:<p class="card-text" th:text="*{lancamento}"></p>
+      </div>
+      <div class="card-body">
+        <a th:href="@{'/deletar/'+*{id}}" class="card-link"><img src="https://img.icons8.com/ios-glyphs/30/undefined/filled-trash.png"/></a>
+        <a th:href="@{'/editar/'+*{id}}" class="card-link"><img src="https://img.icons8.com/material-sharp/24/undefined/edit--v1.png"/></a>
+      </div>
+    </div>
+    </div>
+    </div>
+  </div>
+  </div>
+  <img th:src="@{'/images/'+ (imagem)}" class="card-img-top" alt="...">
+
+</main>

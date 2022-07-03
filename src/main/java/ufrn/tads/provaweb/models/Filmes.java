@@ -11,11 +11,13 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
+import java.util.Date;
 
-@Entity
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
+@Entity
 public class Filmes {
     
     @Id
@@ -36,14 +38,11 @@ public class Filmes {
     @NotBlank(message = ApiMessages.ERRO_PRECO)
     String preco;
 
-    @NotBlank(message = ApiMessages.ERRO_IMAGEM)
     String imagemUri;
 
     @NotBlank(message = ApiMessages.ERRO_SINOPSE)
     @Size(min = 15)
     String sinopse;
 
-    @NotBlank(message = ApiMessages.ERRO_AVALIACAO)
-    int avaliacao;
-
+    Integer avaliacao;
 }
