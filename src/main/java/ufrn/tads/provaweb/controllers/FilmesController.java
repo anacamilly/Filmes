@@ -18,7 +18,7 @@ public class FilmesController {
     }
 
 
-    @GetMapping("/index")
+    @GetMapping(value = {"/", "/index"})
     public String home(Model model){
         List<Filmes> filmes = filmesService.findAll();
         model.addAttribute("filmes", filmes);
